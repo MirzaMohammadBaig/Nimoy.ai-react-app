@@ -1,0 +1,278 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$background-color: #D7CCC8;
+$font-family: 'Roboto', sans-serif;
+
+@mixin btn($fontcolor: #FAFAFA){
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 10px;
+  background: #287AD2F5;
+  color: $fontcolor;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+@mixin message($fontcolor: #90A4AE){
+  color: $fontcolor;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+@mixin input($bkgnd: #F5F5F5){
+  font-family: $font-family;
+  width: 100%;
+  border: 1px solid rgba(0, 179, 255, 0.349);
+  margin: 0 0 15px;
+  padding: 12px;
+  outline: 0;
+  text-align: center;
+  box-sizing: border-box;
+  background: $bkgnd;
+  border-radius: 10px;
+   
+}
+
+
+
+.container{
+  padding: 8% 0 0;
+  width: 365px;
+  margin: auto;
+}
+
+.form{
+  position: relative;
+  z-index: 1;
+  max-width: 350px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  background: #FFFFFF;
+  border-radius: 15px;
+
+}
+
+.form {
+  input{
+    @include input; 
+    
+    ::placeholder {
+      color: #7ac1e5;
+    }
+  }
+  
+  .btn{
+    @include btn;
+  }
+  
+  .message {
+    @include message;
+    a {
+      text-decoration: none;
+      color: #00BFA5;
+    }
+  }
+}
+
+ */
+ /* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7f8ff;
+}
+
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #1d93ab;
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 201%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #1d93ab;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #1d93ab;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin-right: 10px;
+    accent-color: #1d93ab;
+}
+
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #1d93ab;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+    width: 101%;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #1d93ab;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button{
+  border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #1d93ab;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.button :hover{
+    background-color: #157083;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+.button{
+  margin: 0px 2px;
+  padding: 5px 5px;
+}
